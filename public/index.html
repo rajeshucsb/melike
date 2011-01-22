@@ -12,7 +12,8 @@
            status:true, xfbml:true
         });
 
-        FB.Event.subscribe ('auth.login', reloadPage);
+        FB.Event.subscribe('auth.login', reloadPage);
+
         function reloadPage(response){
             if(response.session) {
                 window.location.href="http://melike.heroku.com/friends";
