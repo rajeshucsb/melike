@@ -2,5 +2,5 @@ require 'rubygems'
 require 'sinatra'
 
 get '/' do
-  "Hello World!"
+ File.read(File.join('public', 'index.html'))
 end
