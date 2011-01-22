@@ -3,6 +3,7 @@
      <title>Common Likes</title>
    </head>
    <body>
+	   <div>Connect with facebook to discover what you and your friend "like" in common :) </div>
      <div id="fb-root"></div>
      <script src="http://connect.facebook.net/en_US/all.js"></script>
      <script>
@@ -11,6 +12,6 @@
            status:true, xfbml:true
         });
      </script>
-     <fb:login-button>Login with Facebook</fb:login-button>
+     <fb:login-button perms="friends_likes,user_likes">Login with Facebook</fb:login-button>
    </body>
 </html>
