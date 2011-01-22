@@ -1,2 +1,2 @@
-require 'hello'
+require 'melike'
 run Sinatra::Application
