@@ -8,17 +8,18 @@
      <script src="http://connect.facebook.net/en_US/all.js"></script>
      <script>
         FB.init({
-           appId:'158434814208402', cookie:true,
+           appId:'105020132906712', cookie:true,
            status:true, xfbml:true
         });
 
-        // FB.Event.subscribe('auth.login', reloadPage);
-        //
-        // function reloadPage(response){
-        //     if(response.session) {
-        //         window.location.href="http://melike.heroku.com/friends";
-        //     }
-        // }
+        FB.Event.subscribe('auth.login', reloadPage);
+
+        function reloadPage(response){
+            console.debug(response);
+            if(response.session) {
+                window.location.href="http://melike.heroku.com/friends";
+            }
+        }
 
      </script>
      <fb:login-button perms="friends_likes,user_likes">Login with Facebook</fb:login-button>
