@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'erb'
-require 'graph_api_methods'
+require File.join(File.dirname(__FILE__), 'graph_api_mehods')
 
 get '/' do
  File.read(File.join('public', 'index.html'))
