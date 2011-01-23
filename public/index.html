@@ -16,7 +16,6 @@
         FB.Event.subscribe('auth.sessionChange', reloadPage);
 
         function reloadPage(response){
-            console.debug(response);
             if(response.session) {
                 window.location="http://melike.heroku.com/friends";
             }
