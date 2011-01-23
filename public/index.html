@@ -13,6 +13,7 @@
         });
 
         FB.Event.subscribe('auth.login', reloadPage);
+        FB.Event.subscribe('auth.sessionChange', reloadPage);
 
         function reloadPage(response){
             console.debug(response);
