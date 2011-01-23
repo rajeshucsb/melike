@@ -3,7 +3,6 @@ require 'koala'
 
 class GraphApiMethods
   def initialize(cookies)
-    @graph     = Koala::Facebook::GraphAPI.new
     @oauth     = Koala::Facebook::OAuth.new('105020132906712', '962612f7efff4c587629a7c800453c06')
     @user_info = @oauth.get_user_info_from_cookies(cookies)
     @graph     = Koala::Facebook::GraphAPI.new(@user_info['access_token'])
@@ -24,7 +23,6 @@ class GraphApiMethods
     my_likes_map = get_id_name_map(my_likes)
 
     common_ids = my_likes_ids & friend_likes_ids
-    p common_ids
     common_ids.map {|id| my_likes_map[id]}
   end
 
