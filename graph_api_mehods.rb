@@ -12,6 +12,7 @@ class GraphApiMethods
   def get_friends
     friends = @graph.get_connections("me", "friends")
     friends_arr = friends.sort {|a, b| p a; a["name"] <=> b["name"]}
+    p friends_arr
     friends_arr
   end
 
