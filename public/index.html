@@ -16,18 +16,14 @@
         FB.Event.subscribe('auth.sessionChange', reloadPage);
 
         function reloadPage(response){
-          console.debug(response);
           if(response.session) {
               window.location = "http://melike.heroku.com/friends";
           }
         }
 
         FB.getLoginStatus(function(response) {
-          console.debug(response);
           if (response.session) {
              window.location = "http://melike.heroku.com/friends";
-          } else {
-            // no user session available, someone you dont know
           }
         });
 
