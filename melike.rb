@@ -12,5 +12,6 @@ get '/friends' do
 end
 
 get '/likes' do
-  erb :friends, :locals => { :friends => GraphApiMethods.new(request.cookies).get_likes}
+  friend_id = params[:friend]
+  erb :likes, :locals => { :likes => GraphApiMethods.new(request.cookies).get_likes(friend_id)}
 end

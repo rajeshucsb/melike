@@ -14,6 +14,14 @@ class GraphApiMethods
     friends.sort {|a, b| p a; a["name"] <=> b["name"]}
   end
 
-  def get_likes
+  def get_likes(friend_id)
+    my_likes = @graph.get_connections("me", "likes")
+    friend_likes = @graph.get_connections(friend_likes, "likes")
+    p my_likes
+    p friend_likes
+
+    common = my_likes & friend_likes
+    p common
+    common
   end
 end
