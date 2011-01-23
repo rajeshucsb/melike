@@ -10,7 +10,8 @@ class GraphApiMethods
   end
 
   def get_friends
-    @graph.get_connections("me", "friends")
+    friends = @graph.get_connections("me", "friends")
+    friends.sort {|a, b| a[:name] <=> b[:name]}
   end
 
   def get_likes

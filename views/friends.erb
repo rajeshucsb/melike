@@ -1,6 +1,10 @@
-<p>friends are:</p>
-<% friends.each do |friend| %>
-  <div>
-    <%= friend %>
-  </div>
-<% end %>
+<p>friends:</p>
+<form method='post' action="/likes">
+  <select name="friend"></select>
+  <% friends.each do |friend| %>
+    <option value="<%= friend[1][0] %>">
+      <%= friend[1][1] %>
+    </option>
+  <% end %>
+  <div><button type="submit">Find common likes</button></div>
+</form>
