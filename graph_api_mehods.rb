@@ -24,6 +24,7 @@ class GraphApiMethods
     my_likes_map = get_id_name_map(my_likes)
 
     common_ids = my_likes_ids & friend_likes_ids
+    p common_ids
     common_ids.map {|id| my_likes_map[id]}
   end
 

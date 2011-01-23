@@ -1,6 +1,10 @@
 Common Likes are :
-<% likes.each do |like| %>
-  <div>
-    <%= like[:name] %>
-  </div>
+<% if likes.empty? %>
+  None.
+<% else %>
+  <% likes.each do |like| %>
+    <div>
+      <%= like[:name] %>
+    </div>
+  <% end %>
 <% end %>
