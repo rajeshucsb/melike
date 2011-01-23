@@ -7,7 +7,7 @@ class GraphApiMethods
   end
 
   def get_friends
-    
+    return session
   end
 
   def get_likes

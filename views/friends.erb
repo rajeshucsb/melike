@@ -1,0 +1,5 @@
+<% session.keys.each do |key| %>
+  <div>
+    <%= "session[#{key}] = #{session[key]}" %>
+  </div>
+<% end %>
