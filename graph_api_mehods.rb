@@ -17,11 +17,23 @@ class GraphApiMethods
   def get_likes(friend_id)
     my_likes = @graph.get_connections("me", "likes")
     friend_likes = @graph.get_connections(friend_id, "likes")
-    p my_likes
-    p friend_likes
 
-    common = my_likes & friend_likes
-    p common
-    common
+    my_likes_ids = my_likes.map {|like| like["id"]}
+    friend_likes_ids = friend_likes.map {|like| like["id"]}
+
+    my_likes_map = get_id_name_map(my_likes)
+
+    common_ids = my_likes_ids & friend_likes_ids
+    common_ids.map {|id| my_likes_map[id]}
+  end
+
+  private
+
+  def get_id_name_map(likes)
+    id_name_map = {}
+    likes.each do |like|
+      id_name_map[like["id"]] = like["name"]
+    end
+    likes
   end
 end
