@@ -34,6 +34,7 @@ class GraphApiMethods
     likes.each do |like|
       id_name_map[like["id"]] = like["name"]
     end
-    likes
+
+    id_name_map
   end
 end
