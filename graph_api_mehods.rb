@@ -16,7 +16,7 @@ class GraphApiMethods
 
   def get_likes(friend_id)
     my_likes = @graph.get_connections("me", "likes")
-    friend_likes = @graph.get_connections(friend_likes, "likes")
+    friend_likes = @graph.get_connections(friend_id, "likes")
     p my_likes
     p friend_likes
 
