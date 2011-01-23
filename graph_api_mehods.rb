@@ -10,7 +10,7 @@ class GraphApiMethods
   end
 
   def get_friends
-    graph.get_connections("me", "friends")
+    @graph.get_connections("me", "friends")
   end
 
   def get_likes
