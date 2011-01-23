@@ -2,12 +2,13 @@ require 'rubygems'
 require 'koala'
 
 class GraphApiMethods
-  def initialize
+  def initialize(session)
     @graph = Koala::Facebook::GraphAPI.new
+    @session = session
   end
 
   def get_friends
-    return session
+    return @session
   end
 
   def get_likes

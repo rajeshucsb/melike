@@ -10,9 +10,9 @@ get '/' do
 end
 
 get '/friends' do
-  erb :friends, :locals => { :friends => GraphApiMethods.new.get_friends}
+  erb :friends, :locals => { :friends => GraphApiMethods.new(session).get_friends}
 end
 
 get '/likes' do
-  erb :friends, :locals => { :friends => GraphApiMethods.new.get_likes}
+  erb :friends, :locals => { :friends => GraphApiMethods.new(session).get_likes}
 end
