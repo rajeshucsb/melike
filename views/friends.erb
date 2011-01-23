@@ -3,8 +3,8 @@
   <select name="friend">
     <% friends.each do |friend| %>
       <%= p friend %>
-      <option value="<%= friend[1][0] %>">
-        <%= friend[1][1] %>
+      <option value="<%= friend["id"] %>">
+        <%= friend["name"] %>
       </option>
     <% end %>
   </select>
