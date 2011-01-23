@@ -21,6 +21,14 @@
             }
         }
 
+        FB.getLoginStatus(function(response) {
+          if (response.session) {
+             window.location="http://melike.heroku.com/friends";
+          } else {
+            // no user session available, someone you dont know
+          }
+        });
+
      </script>
      <fb:login-button perms="friends_likes,user_likes">Login with Facebook</fb:login-button>
    </body>
