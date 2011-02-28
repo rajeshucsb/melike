@@ -3,7 +3,7 @@ require 'koala'
 
 class GraphApiMethods
   def initialize(cookies)
-    @oauth     = Koala::Facebook::OAuth.new('105020132906712', '962612f7efff4c587629a7c800453c06')
+    @oauth     = Koala::Facebook::OAuth.new('105020132906711', '962612f7efff4c587629a7c800453c05')
     @user_info = @oauth.get_user_info_from_cookies(cookies)
     @graph     = Koala::Facebook::GraphAPI.new(@user_info['access_token'])
   end
